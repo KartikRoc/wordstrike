@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Word Strike · Privacy Policy</title>
+<meta name="description" content="Privacy Policy for Word Strike, the arcade word-shooter game by KartikRoc.">
+<meta name="theme-color" content="#02040c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#02040c;--panel:rgba(14,22,44,.72);--line:rgba(56,217,255,.18);
+  --fg:#e8f4ff;--txt:#c3cfe6;--mut:#8d9cbb;
+  --cyan:#38d9ff;--violet:#b36bff;--mint:#3dffb0;--pink:#ff4fa3;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.7 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-x:hidden}
+
+/* starfield + glow */
+.sky{position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:
+    radial-gradient(1px 1px at 12% 18%,#fff8,transparent),radial-gradient(1px 1px at 72% 12%,#fff9,transparent),
+    radial-gradient(1.5px 1.5px at 40% 70%,#9fe9ff,transparent),radial-gradient(1px 1px at 88% 60%,#fff7,transparent),
+    radial-gradient(1px 1px at 25% 88%,#fff6,transparent),radial-gradient(1.5px 1.5px at 60% 35%,#d6b8ff,transparent),
+    radial-gradient(1px 1px at 5% 50%,#fff8,transparent),radial-gradient(1px 1px at 95% 92%,#fff7,transparent),
+    radial-gradient(1px 1px at 50% 5%,#fff8,transparent),radial-gradient(1px 1px at 33% 42%,#fff5,transparent);
+  animation:drift 60s linear infinite}
+.glow{position:fixed;z-index:-1;pointer-events:none;border-radius:50%;filter:blur(90px);opacity:.35}
+.g1{width:480px;height:480px;background:var(--cyan);top:-160px;left:-140px}
+.g2{width:420px;height:420px;background:var(--violet);bottom:-160px;right:-120px}
+@keyframes drift{from{transform:translateY(0)}to{transform:translateY(-40px)}}
+.grid{position:fixed;inset:auto 0 0 0;height:40vh;z-index:-1;pointer-events:none;opacity:.18;
+  background:linear-gradient(transparent 0,var(--bg) 100%),
+  repeating-linear-gradient(90deg,var(--cyan) 0 1px,transparent 1px 60px),
+  repeating-linear-gradient(0deg,var(--cyan) 0 1px,transparent 1px 60px);
+  transform:perspective(400px) rotateX(55deg);transform-origin:bottom}
+
+main{max-width:780px;margin:0 auto;padding:56px 16px 40px}
+
+/* hero */
+.hero{text-align:center;margin-bottom:36px}
+.badge{display:inline-flex;align-items:center;gap:8px;font:600 11px/1 Inter;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--mint);border:1px solid rgba(61,255,176,.35);background:rgba(61,255,176,.07);padding:8px 14px;border-radius:99px}
+.badge i{width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 10px var(--mint);animation:pulse 1.8s infinite}
+@keyframes pulse{50%{opacity:.3}}
+h1{font-family:Orbitron,Inter,sans-serif;font-weight:800;font-size:clamp(34px,8vw,58px);line-height:1.05;margin:18px 0 6px;letter-spacing:.02em;
+  background:linear-gradient(90deg,var(--cyan),var(--violet) 60%,var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 0 22px rgba(56,217,255,.35))}
+.sub{font-family:Orbitron,Inter,sans-serif;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--fg);font-size:13px;opacity:.85}
+.upd{color:var(--mut);font-size:13px;margin-top:14px}
+
+/* promise card */
+.promise{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:28px 0 30px}
+.pill{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 12px;text-align:center;backdrop-filter:blur(8px)}
+.pill b{display:block;font-family:Orbitron,Inter,sans-serif;font-size:20px;color:var(--mint);text-shadow:0 0 14px rgba(61,255,176,.5)}
+.pill span{font-size:13px;color:var(--txt)}
+
+/* toc */
+.toc{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:30px}
+.toc a{font-size:13px;color:var(--txt);text-decoration:none;padding:7px 12px;border-radius:99px;border:1px solid var(--line);background:rgba(56,217,255,.05);transition:.2s}
+.toc a:hover{color:var(--bg);background:var(--cyan);border-color:var(--cyan);box-shadow:0 0 16px rgba(56,217,255,.5)}
+
+/* sections */
+section{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px 22px 18px;margin-bottom:16px;backdrop-filter:blur(8px);
+  scroll-margin-top:20px;transition:border-color .25s,box-shadow .25s}
+section:hover{border-color:rgba(56,217,255,.45);box-shadow:0 0 0 1px rgba(56,217,255,.12),0 10px 40px -12px rgba(56,217,255,.25)}
+section::before{content:"";position:absolute;left:0;top:18px;bottom:18px;width:3px;border-radius:3px;background:linear-gradient(var(--cyan),var(--violet))}
+h2{display:flex;align-items:center;gap:12px;font-size:19px;margin:0 0 10px;font-weight:600}
+h2 b{display:inline-grid;place-items:center;min-width:32px;height:32px;border-radius:10px;font:700 13px Orbitron,Inter,sans-serif;
+  color:var(--cyan);background:rgba(56,217,255,.12);border:1px solid rgba(56,217,255,.3)}
+p,li{color:var(--txt);margin:0 0 10px}
+ul{padding-left:20px;margin:0 0 6px}
+li::marker{color:var(--cyan)}
+strong{color:var(--fg)}
+a{color:var(--cyan)}
+.hl{border-left:3px solid var(--mint);padding:12px 16px;background:rgba(61,255,176,.07);border-radius:0 12px 12px 0;color:#d4fff0;margin-top:12px}
+
+/* delete steps */
+.steps{counter-reset:s;list-style:none;padding:0;margin:8px 0 12px}
+.steps li{counter-increment:s;position:relative;padding-left:42px;margin-bottom:10px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;
+  font:700 12px Orbitron,Inter,sans-serif;color:var(--bg);background:linear-gradient(135deg,var(--mint),var(--cyan))}
+.danger{border-color:rgba(255,79,163,.35)}
+.danger::before{background:linear-gradient(var(--pink),var(--violet))}
+.danger h2 b{color:var(--pink);background:rgba(255,79,163,.12);border-color:rgba(255,79,163,.35)}
+
+.btn{display:inline-flex;align-items:center;gap:8px;margin-top:6px;padding:11px 18px;border-radius:12px;text-decoration:none;font-weight:600;font-size:14px;
+  color:var(--bg);background:linear-gradient(90deg,var(--cyan),var(--violet));box-shadow:0 0 22px rgba(56,217,255,.35);transition:.2s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 0 30px rgba(179,107,255,.55)}
+
+footer{text-align:center;color:var(--mut);font-size:13px;padding:24px 16px 40px}
+footer b{font-family:Orbitron,Inter,sans-serif;letter-spacing:.15em;color:var(--fg)}
+
+@media (max-width:560px){
+  main{padding-top:40px}
+  .promise{grid-template-columns:1fr}
+  section{padding:18px 16px 14px}
+  h2{font-size:17px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="sky"></div><div class="glow g1"></div><div class="glow g2"></div><div class="grid"></div>
+
+<main>
+  <header class="hero">
+    <span class="badge"><i></i>Privacy Policy</span>
+    <h1>WORD STRIKE</h1>
+    <div class="sub">Your data · Your control</div>
+    <div class="upd">Last updated · October 30, 2026</div>
+  </header>
+
+  <div class="promise">
+    <div class="pill"><b>0</b><span>Ads or trackers</span></div>
+    <div class="pill"><b>0</b><span>Data sold, ever</span></div>
+    <div class="pill"><b>1 tap</b><span>Delete everything</span></div>
+  </div>
+
+  <nav class="toc">
+    <a href="#overview">Overview</a><a href="#collect">What we collect</a><a href="#use">How we use it</a>
+    <a href="#storage">Storage</a><a href="#providers">Providers</a><a href="#ads">Ads</a>
+    <a href="#permissions">Permissions</a><a href="#children">Children</a><a href="#delete-account">Delete account</a>
+    <a href="#retention">Retention</a><a href="#contact">Contact</a>
+  </nav>
+
+  <section id="overview">
+    <h2><b>01</b>Overview</h2>
+    <p>Word Strike is an arcade game. This policy explains what information the app handles when you sign in with Google, play, and take part in the world leaderboard.</p>
+    <p class="hl">We never sell your data and show no ads. The only things other players can see are your callsign and your best score on the world leaderboard.</p>
+  </section>
+
+  <section id="collect">
+    <h2><b>02</b>What we collect</h2>
+    <ul>
+      <li><strong>From Google Sign-In:</strong> your name, email address and Google account ID.</li>
+      <li><strong>From you:</strong> the callsign (username) you choose.</li>
+      <li><strong>Game data:</strong> your scores, tutorial progress and settings.</li>
+      <li><strong>World leaderboard:</strong> your callsign, best score, level reached, words destroyed and when it was set.</li>
+    </ul>
+  </section>
+
+  <section id="use">
+    <h2><b>03</b>How we use it</h2>
+    <p>To personalise the game (greeting you and showing your callsign), to remember your progress and preferences, and to rank your best score against other players on the world leaderboard.</p>
+  </section>
+
+  <section id="storage">
+    <h2><b>04</b>Where it's stored</h2>
+    <p>Your profile, scores and settings are stored in the app's private storage on your device, and are not included in cloud backups or transfers to a new phone.</p>
+    <p>Your world leaderboard entry is stored with Google Firebase (Cloud Firestore). To make sure each entry belongs to a real player, Firebase Authentication also keeps your Google account ID, name and email. Your email is never shown to other players.</p>
+  </section>
+
+  <section id="providers">
+    <h2><b>05</b>Service providers</h2>
+    <p>Sign-in is handled by Google Play services, and the leaderboard runs on Google Firebase. To keep the leaderboard fair, Firebase App Check uses Google Play Integrity to confirm that scores come from the genuine app; this checks the app and device, not your personal data.</p>
+    <p>Google's <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a> applies to how Google processes this data. We don't share your data with anyone else.</p>
+  </section>
+
+  <section id="ads">
+    <h2><b>06</b>Ads &amp; tracking</h2>
+    <p>Word Strike contains no ads, analytics or third-party trackers.</p>
+  </section>
+
+  <section id="permissions">
+    <h2><b>07</b>Permissions</h2>
+    <p>Internet and network status, only for the world leaderboard (the game itself plays offline), and vibration for optional haptic feedback. No location, camera, microphone, contacts or biometric access.</p>
+  </section>
+
+  <section id="children">
+    <h2><b>08</b>Children</h2>
+    <p>If you are under 13 (or the minimum age in your country), please ask a parent or guardian before signing in.</p>
+  </section>
+
+  <section id="delete-account" class="danger">
+    <h2><b>09</b>Your choices &amp; account deletion</h2>
+    <p>You can sign out at any time. To delete your account and all your data from inside the app:</p>
+    <ol class="steps">
+      <li>Open Word Strike and go to <strong>Settings</strong>.</li>
+      <li>Tap <strong>Delete all data</strong>.</li>
+      <li>Confirm your Google account. The app then removes your world leaderboard entry, deletes your Firebase account and erases everything on your device.</li>
+    </ol>
+    <p>You can also email us to ask for your data to be deleted. Uninstalling the app removes the data on your device.</p>
+    <a class="btn" href="mailto:kartikgupta618@gmail.com?subject=Word%20Strike%20-%20Delete%20my%20data">✉ Request deletion by email</a>
+    <p class="hl">Callsigns must not be offensive. You can report one from the world leaderboard (or by email), and we remove callsigns that break this rule.</p>
+  </section>
+
+  <section id="retention">
+    <h2><b>10</b>Retention</h2>
+    <p>Your leaderboard entry is kept until you delete it. Data on your device stays until you delete it or uninstall the app.</p>
+  </section>
+
+  <section id="changes">
+    <h2><b>11</b>Changes</h2>
+    <p>If this policy changes, the app will ask you to review and accept it again.</p>
+  </section>
+
+  <section id="contact">
+    <h2><b>12</b>Contact</h2>
+    <p>Questions or deletion requests? Email <a href="mailto:kartikgupta618@gmail.com">kartikgupta618@gmail.com</a>.</p>
+  </section>
+</main>
+
+<footer><b>WORD STRIKE</b><br>© 2026 KartikRoc · All rights reserved</footer>
+</body>
+</html>
